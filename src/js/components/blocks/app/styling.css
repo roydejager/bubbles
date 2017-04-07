@@ -1,0 +1,10 @@
+@import "./style.css";
+@import "../../../../style/variables/variables";
+
+
+:local(.testTwo) {
+  color: var(--color-primary);
+  @media (--large-up) {
+    background-color: green;
+  }
+}

@@ -1,0 +1,96 @@
+@import "../variables/fonts";
+@import "../variables/colors";
+
+body,
+html {
+  font-family: var(--font-regular);
+  text-rendering: optimizeLegibility;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+pre,
+strong {
+  color: var(--color-text);
+}
+
+h1, h2, h3, .quote {
+  /*font-family: var(--font-thin);*/
+}
+
+h1,
+.quote {
+  font-size: 30px;
+  letter-spacing: 1.25px;
+  line-height: 38px;
+
+  @include media(--medium-up) {
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    line-height: 44px;
+  }
+
+  @include media(--large-up) {
+    font-size: 56px;
+    line-height: 70px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  line-height: 30px;
+
+  @include media(--medium-up) {
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 38px;
+  }
+
+  @include media(--large-up) {
+    font-size: 36px;
+    letter-spacing: 1.5px;
+    line-height: 44px;
+  }
+}
+
+h3 {
+  /*font-family: var(--font-light);*/
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  line-height: 28px;
+
+  @include media(--large-up) {
+    line-height: 36px;
+  }
+}
+
+h4 {
+/*font-family: var(--font-medium);*/
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  line-height: 36px;
+}
+
+a {
+    text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

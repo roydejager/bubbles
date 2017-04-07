@@ -1,0 +1,6 @@
+/*@import "../../../../style/variables/variables";*/
+
+:local(h2) {
+  background-color: black;
+  color: white !important;
+}

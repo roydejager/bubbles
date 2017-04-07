@@ -1,0 +1,30 @@
+@import "../variables/spacings";
+@import "../variables/breakpoints";
+
+:root {
+  --site-width: 1280px;
+}
+ 
+:local(.wrapper) {
+    max-width: var(--site-width);
+    margin: 0 auto;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+
+    @media(--medium-up) {
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+    }
+
+    @media(--large-up) {
+      max-width: calc(var(--site-width) + var(--spacing-md) * 2);
+      padding-left: var(--spacing-md);
+      padding-right: var(--spacing-md);
+    }
+
+    @media(--xlarge-up) {
+      max-width: calc(var(--site-width) + var(--spacing-md) * 2);
+      padding-left: var(--spacing-lg);
+      padding-right: var(--spacing-lg);
+    }
+  }
