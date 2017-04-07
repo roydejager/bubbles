@@ -1,0 +1,21 @@
+@import "../../../../style/main";
+
+:local(.divider) {
+  margin: var(--spacing-md) 0;
+  overflow: hidden;
+  padding: 20px;
+  // text-align: center;
+}
+
+:local(.circle) {
+  background-color: red;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+:local(.top) {
+  margin-right: 20px;
+}

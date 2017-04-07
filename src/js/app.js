@@ -6,8 +6,6 @@ function App(props) {
 
   return(
     <div>
-      <Header/>
-      <div>oegaboega</div>
       {children}
     </div>
   )

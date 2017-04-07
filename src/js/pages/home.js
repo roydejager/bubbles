@@ -1,13 +1,11 @@
 import React from 'react'
-import App from '../components/blocks/app'
+import Bubbles from '../components/blocks/bubbles'
 
 const Home = () => {
 
   return(
     <div>
-      <App/>
-      
-      ewfjnlw
+      <Bubbles />
     </div>
   )
 }
