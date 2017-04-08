@@ -12,27 +12,39 @@ class Dot extends React.Component {
     }
   }
 
-  calculateDistance(e) {
-    const { elementCoordTop, elementCoordLeft } = this.state
+  componentDidMount() {
 
     this.setState({
       elementCoordTop: this.node.getBoundingClientRect().top,
       elementCoordLeft: this.node.getBoundingClientRect().left
     })
+  }
 
-    this.setState({ distanceTop: Math.abs(elementCoordTop - e.clientY)})
-    this.setState({ distanceLeft: Math.abs(elementCoordLeft - e.clientX) })
+  resetPosition() {
+    this.setState({
+      distanceTop: 0,
+      distanceLeft: 0
+    })
+  }
 
+  calculateDistance(e) {
+    const { elementCoordTop, elementCoordLeft, distanceTop, distanceLeft } = this.state
+
+    if (distanceLeft <= 40 || distanceTop <= 40) {
+      this.setState({ distanceTop: Math.abs(elementCoordTop - e.clientY)})
+      this.setState({ distanceLeft: Math.abs(elementCoordLeft - e.clientX) })
+    } else {
+      this.resetPosition()
+    }
   }
 
 
   render() {
     const { distanceTop, distanceLeft } = this.state
-    console.log(distanceLeft)
     return (
-      <div onMouseMove={this.calculateDistance.bind(this)} className={styles.divider}>
-         <div ref={e => this.node = e}className={styles.circle}>
-           <div className={styles.top}>{distanceTop}</div>
+      <div onMouseLeave={this.resetPosition.bind(this)} onMouseMove={this.calculateDistance.bind(this)} className={styles.bubble}>
+         <div style={{ top: `${distanceTop}px`, left: `${distanceLeft}px`}} ref={ e => this.node = e } className={styles.circle}>
+           <div  className={styles.top}>{distanceTop}</div>
            <div className={styles.left}>{distanceLeft}</div>
          </div>
       </div>
@@ -47,7 +59,16 @@ function Divider() {
   // })
 
   return (
-    <Dot />
+    <div className={styles.divider}>
+      <Dot />
+      <Dot />
+      <Dot />
+      <Dot />
+      <Dot />
+      <Dot />
+      <Dot />
+      <Dot />
+    </div>
   )
 }
 
