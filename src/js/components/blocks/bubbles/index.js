@@ -30,11 +30,11 @@ class Dot extends React.Component {
   calculateDistance(e) {
     const { elementCoordTop, elementCoordLeft, distanceTop, distanceLeft } = this.state
 
-    if (distanceLeft <= 40 || distanceTop <= 40) {
+    if (distanceLeft <= 20 || distanceTop <= 20) {
       this.setState({ distanceTop: Math.abs(elementCoordTop - e.clientY)})
       this.setState({ distanceLeft: Math.abs(elementCoordLeft - e.clientX) })
     } else {
-      this.resetPosition()
+      return false
     }
   }
 
