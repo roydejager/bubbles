@@ -30,9 +30,9 @@ class Dot extends React.Component {
   calculateDistance(e) {
     const { elementCoordTop, elementCoordLeft, distanceTop, distanceLeft } = this.state
 
-    if (distanceLeft <= 20 || distanceTop <= 20) {
-      this.setState({ distanceTop: Math.abs(elementCoordTop - e.clientY)})
-      this.setState({ distanceLeft: Math.abs(elementCoordLeft - e.clientX) })
+    if (distanceLeft <= 10 || distanceTop <= 10 || distanceLeft <= -10) {
+      this.setState({ distanceTop: elementCoordTop - e.clientY})
+      this.setState({ distanceLeft: elementCoordLeft - e.clientX })
     } else {
       return false
     }
@@ -46,6 +46,7 @@ class Dot extends React.Component {
          <div style={{ top: `${distanceTop}px`, left: `${distanceLeft}px`}} ref={ e => this.node = e } className={styles.circle}>
            <div  className={styles.top}>{distanceTop}</div>
            <div className={styles.left}>{distanceLeft}</div>
+           .
          </div>
       </div>
     )
